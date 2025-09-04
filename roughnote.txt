@@ -1,0 +1,28 @@
+import React from "react";
+import ReactDom from "react-dom/client";
+
+function App(){
+return <h1>Hello World</h1>;
+}
+
+const root = ReactDom.createRoot(document.getElementById('root'));
+
+root.render(<App />);
+
+// //React 17 Old
+// React.render(<App />);
+
+// //React 17 Old
+// React.render(<App />);
+
+// Uses of ReactStrictMode
+
+// What it does:
+
+// Runs some lifecycle methods, useEffect, and useState initializers twice (in dev) to catch side effects that aren’t pure.
+
+// Warns you about deprecated APIs and unsafe practices (e.g., componentWillMount).
+
+// Helps spot issues early before they blow up in production.
+
+// Enforces best practices so your code is more "future-proof."
