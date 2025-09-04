@@ -64,12 +64,38 @@ function Header() {
   );
 }
 function Menu() {
+  //Parent Component of Pizza => Menu
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <Pizza />
-      <Pizza />
+      <Pizza
+        name="Pizza Spinnaci"
+        ingredient="Tomato, mozarella, spinach, and ricotta cheese"
+        photoName="pizzas/spinaci.jpg"
+        price={10}
+      />
+      <Pizza
+        name="Pizza Funghi"
+        ingredient="Tomato, mozarella, mushrooms, and onion"
+        photoName="pizzas/funghi.jpg"
+        price={12}
+      />
     </main>
+  );
+}
+
+function Pizza(props) {
+  console.log(props);
+  //Child Component of Menu => Pizza
+  return (
+    <div className="pizza">
+      <img src={props.photoName} alt={props.name} />
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredient}</p>
+        <span>{props.price + 3}</span>
+      </div>
+    </div>
   );
 }
 
@@ -91,16 +117,6 @@ function Footer() {
     </footer>
   );
   // return React.createElement("footer", null, "We're Currently Open Now"); => old way
-}
-
-function Pizza() {
-  return (
-    <div>
-      <img src="pizzas/spinaci.jpg" alt="pizza" />
-      <h3>Pizza Spinaci</h3>
-      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
-    </div>
-  );
 }
 
 //React 18 Latest
